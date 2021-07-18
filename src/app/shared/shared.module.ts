@@ -4,6 +4,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { MaterialModule } from './material/material.module';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 import { LayoutComponent } from './layout/layout.component';
 
@@ -13,7 +14,8 @@ import { LayoutComponent } from './layout/layout.component';
     FormsModule,
     ReactiveFormsModule,
     FlexLayoutModule,
-    MaterialModule
+    MaterialModule,
+    NgxSpinnerModule 
   ],
   declarations: [
     LayoutComponent

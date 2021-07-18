@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+import { NgxSpinnerService } from 'ngx-spinner';
 import { JsonPlaceholderService } from 'src/app/services/json-placeholder.service';
 
 @Component({
@@ -11,21 +12,31 @@ export class CommentsComponent implements OnInit {
 
   public comments = new Array<any>();
 
-  constructor( private service: JsonPlaceholderService) { }
+  constructor( 
+    private service: JsonPlaceholderService,
+    private spinner: NgxSpinnerService
+  ) { }
 
   ngOnInit() {
+    this.spinner.show();
     this.getComments();
   }
 
   getComments() {
     this.service.getComments()
     .then( res => {
-      debugger
       this.comments = res;
+      this.spinnerHide();
     })
     .catch( err => {
-      debugger
+      this.spinnerHide();
     })
+  }
+
+  spinnerHide(){
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 1000);
   }
 
 }

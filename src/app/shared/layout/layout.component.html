@@ -55,6 +55,13 @@
 
     <!-- Main content -->
     <mat-sidenav-content class="sidenav-content">
+      <ngx-spinner
+        bdColor="rgba(51,51,51,0.8)"
+        size="medium"
+        color="#fff"
+        type="square-jelly-box">
+        <p style="font-size: 20px; color: white">Loading...</p>
+      </ngx-spinner>
       <router-outlet></router-outlet>
     </mat-sidenav-content>
 
