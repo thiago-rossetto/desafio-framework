@@ -1,0 +1,62 @@
+<div class="navbar-container" [class.example-is-mobile]="mobileQuery.matches">
+
+  <!-- Top navbar -->
+  <mat-toolbar class="navbar" color="primary">
+    <button mat-icon-button (click)="snav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span class="navbar-spacer"></span>
+
+    <mat-icon>important_devices</mat-icon>
+    <a class="navbar-brand" [routerLink]="['/dashboard']" matTooltip="Home">
+      <h1 class="title">
+        Desafio Framework
+      </h1>
+    </a>
+    <span class="navbar-spacer"></span>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="navbar-sidenav-container">
+    <!-- Side nav -->
+    <mat-sidenav #snav [opened]="!mobileQuery.matches" [mode]="mobileQuery.matches ? 'over' : 'side'"
+      [fixedInViewport]="mobileQuery.matches" fixedTopGap="56" class="sidenav">
+      <mat-nav-list>
+        <h3 mat-subheader>Menu</h3>
+
+        <a mat-list-item [routerLink]="['/dashboard']" routerLinkActive="active">
+          <mat-icon mat-list-icon class="mat-icon-primary">
+            dashboard
+          </mat-icon>
+          <p mat-line> Dashboard </p>
+        </a>
+
+        <a mat-list-item [routerLink]="['/album']" routerLinkActive="active">
+          <mat-icon mat-list-icon class="mat-icon-primary">
+            photo_library
+          </mat-icon>
+          <p mat-line> Álbum </p>
+        </a>
+
+        <a mat-list-item [routerLink]="['/comments']" routerLinkActive="active">
+          <mat-icon mat-list-icon class="mat-icon-primary">
+            comment
+          </mat-icon>
+          <p mat-line> Comentários </p>
+        </a>
+
+        <a mat-list-item [routerLink]="['/to-dos']" routerLinkActive="active">
+          <mat-icon mat-list-icon class="mat-icon-primary">
+            assignment_turned_in
+          </mat-icon>
+          <p mat-line> Tarefas </p>
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <!-- Main content -->
+    <mat-sidenav-content class="sidenav-content">
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+
+  </mat-sidenav-container>
+</div>

@@ -1,0 +1,28 @@
+<div class="container" fxLayout="row" fxLayoutAlign="center none">
+  <div fxFlex="94%">
+    <div class="container">
+      <div class="title-pages">
+        <div class="row">
+          <h2>Álbum</h2>
+        </div>
+        <hr/>
+      </div>
+    </div>
+
+    <div class="container mt-2">
+      <div fxLayout="row wrap" fxLayoutGap="1.5% grid" fxLayoutAlign="center none" fxLayout.lt-sm="column">
+        <div fxFlex="32%" *ngFor="let item of albums">
+          <mat-card class="card-picture">
+            <mat-card-title>
+              <span>{{item.title}}</span>
+            </mat-card-title>
+            <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg">
+            <mat-card-content>
+              <mat-card-subtitle>by user {{item.userId}}</mat-card-subtitle>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
