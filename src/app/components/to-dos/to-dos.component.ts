@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 
 import { NgxSpinnerService } from 'ngx-spinner';
+import { ToastrService } from 'ngx-toastr';
 import { JsonPlaceholderService } from 'src/app/services/json-placeholder.service';
 
 @Component({
@@ -16,7 +17,8 @@ export class ToDosComponent implements OnInit {
   
   constructor( 
     private service: JsonPlaceholderService,
-    private spinner: NgxSpinnerService
+    private spinner: NgxSpinnerService,
+    private toastr: ToastrService
   ) { }
 
   ngOnInit() {
@@ -32,6 +34,7 @@ export class ToDosComponent implements OnInit {
     })
     .catch( err => {
       this.spinnerHide();
+      this.toastr.error("Algo errrado aconteceu!");
     })
   }
 

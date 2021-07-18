@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { MaterialModule } from './material/material.module';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { ToastrModule } from 'ngx-toastr';
 
 import { LayoutComponent } from './layout/layout.component';
 
@@ -15,7 +16,8 @@ import { LayoutComponent } from './layout/layout.component';
     ReactiveFormsModule,
     FlexLayoutModule,
     MaterialModule,
-    NgxSpinnerModule 
+    NgxSpinnerModule,
+    ToastrModule.forRoot() 
   ],
   declarations: [
     LayoutComponent
